@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+
 SchipGraphic::Application.config.secret_key_base = '41ba4e7aaf4c6de1eb9615cdd69fa0ced4bfe81f818f4542613f2e688ecfc1ed4a0b460b8871efbc5e06e34f6cbe62d6f23f6aae9184b2068f2e1ea38daf8add'
