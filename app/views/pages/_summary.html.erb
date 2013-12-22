@@ -1,0 +1,130 @@
+<div class="tab-content">
+  <div class="tab-pane active" id="tab1">
+    <script type="text/javascript" src="https://www.google.com/jsapi">
+        </script>
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Knowledge', 'Years of Practice'],
+              ['Integrated Business Planning', 13],
+              ['Busienss Process Innovation', 22],
+              ['Product Lifecycle Management', 20],
+              ['New Product Development', 22],
+              ['Project Management', 15],
+              ['Business Analysis', 15],
+              ['Change Management', 24],
+              ['Business Intelligence', 2]
+            ]);
+
+            var options = {
+              title: 'Business Strategy and Tactics',
+              height: 500,
+              width: 600
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart1'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="chart1"></div>
+  </div>
+
+  <div class="tab-pane" id="tab2">
+    <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Knowledge', 'Years of Practice'],
+              ['Market Research', 21],
+              ['Product Differentiation', 18],
+              ['Integrated Marketing Communications', 18],
+              ['Account Management', 9],
+              ['Collaborative-Based Recruitment', 9],
+              ['Enrolment Management', 9]
+            ]);
+
+            var options = {
+              title: 'Product Marketing',
+              height: 500,
+              width: 600
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart2'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="chart2"></div>
+  </div>
+
+  <div class="tab-pane" id="tab3">
+    <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Knowledge', 'Years of Practice'],
+              ['Content Strategy', 21],
+              ['Information Design', 18],
+              ['User Experience', 18],
+              ['Web Design', 9],
+              ['Web Development', 9]
+            ]);
+
+            var options = {
+              title: 'Website Architecture',
+              height: 500,
+              width: 600
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart3'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="chart3"></div>
+  </div>
+
+    <div class="tab-pane" id="tab4">
+    <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Knowledge', 'Years of Practice'],
+              ['Adult Education', 21],
+              ['Educational Technology', 18],
+              ['E-Learning', 18],
+              ['Knowledge and Skills Transfer', 9],
+              ['Curriculum Development', 9],
+              ['Instructional Design', 9],
+              ['Teaching and Training', 9],
+              ['Evaluation', 9],
+            ]);
+
+            var options = {
+              title: 'Learning and Development',
+              height: 500,
+              width: 600
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart4'));
+            chart.draw(data, options);
+          }
+        </script>
+        <div id="chart4"></div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
