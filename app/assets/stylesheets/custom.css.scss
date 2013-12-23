@@ -4,3 +4,30 @@ body {
   min-height: 2000px;
   padding-top: 70px;
 }
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+#scrollContent{
+	height:186px;
+	overflow:auto;
+	position:relative;
+}
+
+@media (min-width: 979px) {
+  #mynav.affix-top {
+    position: static;
+  	margin-top:30px;
+  	width:228px;
+  }
+
+  #mynav.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#mynav li.active a {background-color:#fff;}

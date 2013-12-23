@@ -2,7 +2,12 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Mark Schipper</h1>
+    <div class="col-md-3">
+    	<a class="thumbnail">
+      	<img alt="Mark Schipper" src="/assets/mark.jpg" />
+    	</a>
+  	</div>
+  	<h1>Mark Schipper</h1>
     <p>"Individual Expression + Selfless Collaboration = Design-Inspired Product Management"</p>
   </div>
 </div>
@@ -11,10 +16,10 @@
   <div class="row">
 
     <aside class="col-md-3">
-      <div class="" role="complementary">
-        <ul class="nav">
+      <div class="list-group navbar" id="sidebar" role="complementary">
+        <ul class="well nav" id="mynav" data-spy="affix" data-offset-top="280">
 
-          <li><a href="#overview">Overview</a></li>
+          <li class="active"><a href="#overview">Overview</a></li>
   				<li><a href="#summary">Summary</a></li>
   				<li><a href="#employment">Employment</a></li>
   				<li><a href="#education">Education</a></li>
@@ -27,14 +32,20 @@
   		<div class="bs-docs-section">
 
     		<div class="page-header">
-      		<h1 id="overview">Overview</h1>
-									</div>
+      		<h1 id="overview">Overview<small> Subtext for header</small></h1>
+      		<p class="lead">A specializing generalist with a 'T-shaped' combination of skills in business, marketing, technology and learning.</p>
+      	</div>
 
+      	<div class="row">
+  				<div class="col-md-6">
+    				<a class="thumbnail">
+      				<img alt="T-Shaped Professional" src="/assets/tshaped.png" />
+    				</a>
+  				</div>
+				</div>
 
 				<div class="page-header">
 					<h1 id="summary">Summary</h1>
-					<p class="lead">A generalizing specialist, possessing a 'T-shaped' combination of skills and abilities in business, marketing, technology and learning.</p>
-
 					<div class="tabbable tabs-below">
 					  <ul class="nav nav-stacked">
 					    <li class="active"><a href="#tab1" data-toggle="tab">Business Strategy and Tactics</a></li>
@@ -43,15 +54,33 @@
 					    <li><a href="#tab4" data-toggle="tab">Learning and Development</a></li>
 					  </ul>
 					</div>
-					<%= render 'pages/summary' %>
+				</div>
+
+				<div class="row">
+  				<div class="col-md-12">
+    				<a class="thumbnail">
+      				<%= render 'pages/summary' %>
+    				</a>
+  				</div>
 				</div>
 
 				<div class="page-header">
 					<h1 id="employment">Employment</h1>
+					<p class="lead">A senior product manager with 24 years of experience in the education sector.</p>
+					<%= render 'pages/employment' %>
 				</div>
 
 				<div class="page-header">
-					<h1 id="education">Education</h1>
+					<h1 id="education">Education <small>The Pursuit of Lifelong Learning</small></h1>
+					<p class="lead">Both my formal and informal learning has always centered upon the 'Interrelatedness of Things'. Not just people, process, technology and information, but also science, </p>
+				</div>
+
+				<div class="row">
+  				<div class="col-md-12">
+    				<a class="thumbnail">
+      				<img alt="Education Mind Map" src="/assets/mindmap.png" />
+    				</a>
+  				</div>
 				</div>
 
 			</div>
