@@ -1,14 +1,21 @@
 <!-- Home ================================================== -->
 
-<div class="container">
-  <div class="jumbotron">
+<div class="jumbotron">
+  <div class="container">
+
     <div class="col-md-3">
     	<a class="thumbnail">
       	<img alt="Mark Schipper" src="/assets/mark.jpg" />
     	</a>
   	</div>
-  	<h1>Mark Schipper</h1>
-    <p>"Individual Expression + Selfless Collaboration = Design-Inspired Product Management"</p>
+
+  	<div class="col-md-9">
+  		<h1>Mark Schipper</h1>
+    	<blockquote class="pull-right">
+    		<p>Individual expression and selfless collaboration creates design-inspired product marketing and development.</p>
+    	</blockquote>
+    </div>
+
   </div>
 </div>
 
@@ -19,25 +26,31 @@
       <div class="list-group navbar" id="sidebar" role="complementary">
         <ul class="well nav" id="mynav" data-spy="affix" data-offset-top="280">
 
-          <li class="active"><a href="#overview">Overview</a></li>
-  				<li><a href="#summary">Summary</a></li>
+          <li class="active"><a href="#overview">Hybrid Professional</a></li>
+  				<li><a href="#summary">Specializing Generalist</a></li>
+  				<li><a href="#knowledge">Knowledge and Skills Stack</a></li>
+  				<li><a href="#skills">Skills</a></li>
   				<li><a href="#employment">Employment</a></li>
-  				<li><a href="#education">Education</a></li>
+  				<li><a href="#education">Learning Paths</a></li>
 
 				</ul>
 			</div>
 		</aside>
 
 		<section class="col-md-9" role="main">
-  		<div class="bs-docs-section">
+  		<div class="">
 
     		<div class="page-header">
-      		<h1 id="overview">Overview<small> Subtext for header</small></h1>
-      		<p class="lead">A specializing generalist with a 'T-shaped' combination of skills in business, marketing, technology and learning.</p>
+      		<h1 id="overview">Hybrid Professional<small> with a combination</small></h1>
+      		<p class="lead"></p>
+      	</div>
+
+     		<div class="page-header">
+      		<h1 id="summary">Specializing Generalist<small> with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
       	</div>
 
       	<div class="row">
-  				<div class="col-md-6">
+  				<div class="col-md-8">
     				<a class="thumbnail">
       				<img alt="T-Shaped Professional" src="/assets/tshaped.png" />
     				</a>
@@ -45,15 +58,15 @@
 				</div>
 
 				<div class="page-header">
-					<h1 id="summary">Summary</h1>
-					<div class="tabbable tabs-below">
-					  <ul class="nav nav-stacked">
-					    <li class="active"><a href="#tab1" data-toggle="tab">Business Strategy and Tactics</a></li>
-					    <li><a href="#tab2" data-toggle="tab">Product Marketing</a></li>
-					    <li><a href="#tab3" data-toggle="tab">Website Architecture</a></li>
-					    <li><a href="#tab4" data-toggle="tab">Learning and Development</a></li>
-					  </ul>
-					</div>
+					<h1 id="knowledge">Knowledge Stack</h1>
+				</div>
+				<div class="tabbable tabs-below">
+				  <ul class="nav nav-stacked">
+				    <li class="active"><a href="#tab1" data-toggle="tab">Business Strategy and Tactics</a></li>
+				    <li><a href="#tab2" data-toggle="tab">Product Marketing</a></li>
+				    <li><a href="#tab3" data-toggle="tab">Website Architecture</a></li>
+				    <li><a href="#tab4" data-toggle="tab">Learning and Development</a></li>
+				  </ul>
 				</div>
 
 				<div class="row">
@@ -65,8 +78,16 @@
 				</div>
 
 				<div class="page-header">
+      		<h1 id="skills">Skills<small> Subtext for header</small></h1>
+      		<p class="lead"></p>
+      	</div>
+
+
+				<div class="page-header">
 					<h1 id="employment">Employment</h1>
 					<p class="lead">A senior product manager with 24 years of experience in the education sector.</p>
+				</div>
+				<div>
 					<%= render 'pages/employment' %>
 				</div>
 
