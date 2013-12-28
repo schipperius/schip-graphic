@@ -1,120 +1,109 @@
 <div class="container">
-	<div class="row jumbotron">
 
-    <div class="col-md-3">
-    	<a class="thumbnail">
-      	<img alt="Mark Schipper" src="/assets/mark.jpg" />
-    	</a>
+	<div class="row jumbotron"><!-- start first row -->
+  	<div class="col-md-12">
+  		<div class="col-md-3">
+  			<a class="thumbnail">
+    			<img class="pic" alt="Mark Schipper" src="/assets/mark.jpg" />
+  			</a>
+			</div>
+			<div class="col-md-9">
+				<h1>Mark Schipper</h1>
+		  	<blockquote class="pull-right"><p>Individual expression and selfless collaboration creates design-inspired product marketing and development.</p></blockquote>
+		  </div>
   	</div>
+  </div><!-- end first row -->
 
-  	<div class="col-md-9">
-  		<h1>Mark Schipper</h1>
-    	<blockquote class="pull-right"><p>Individual expression and selfless collaboration creates design-inspired product marketing and development.</p></blockquote>
-    </div>
+	<div class="row"><!-- start second row -->
 
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-
-    <nav class="col-md-3" role="navigation">
-      <ul class="nav navbar well" id="mynav" data-spy="affix" data-offset-top="280">
-        <li class="active"><a href="#overview">Forward-Thinking</a></li>
+	  <div class="col-md-3 well">
+      <ul class="nav navbar" id="mynav">
+        <li><a href="#overview">Forward-Thinking</a></li>
 				<li><a href="#summary">Specializing Generalist</a></li>
 				<li><a href="#knowledge">Knowledge and Skills Stack</a></li>
 				<li><a href="#employment">Senior Product Manager</a></li>
 				<li><a href="#education">Learning Paths</a></li>
 			</ul>
-		</nav>
+	  </div><!-- end col-md-3 -->
 
-		<section class="col-md-9">
+	  <div class="col-md-9">
+  		<div class="page-header">
+  			<h1 id="overview">Forward-Thinking<small> evangelist that get’s things done.</small></h1>
+  		</div>
+  		<div>
+  			<p class="lead">A hybrid professional that performs across multiple disciplines, highly proficient, envisioning on a strategic level, executing on the tactical level, driving business value.</p>
+  		</div>
 
-    		<div class="page-header">
-      		<h1 id="overview">Forward-Thinking<small> evangelist that get’s things done.</small></h1>
-      	</div>
-      	<div>
-      		<p class="lead">A hybrid professional that performs across multiple disciplines, highly proficient, envisioning on a strategic level, executing on the tactical level, driving business value.</p>
-      	</div>
+ 			<div class="page-header">
+  			<h1 id="summary">Specializing Generalist<small> with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
+  		</div>
+			<div>
+				<a class="thumbnail">
+  				<img alt="T-Shaped Professional" src="/assets/tshaped.png" />
+				</a>
+			</div>
 
-     		<div class="page-header">
-      		<h1 id="summary">Specializing Generalist<small> with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
-      	</div>
+			<div class="page-header">
+				<h1 id="knowledge">Knowledge <small>Stack</small></h1>
+			</div>
+			<div class="tabbable tabs-below">
+		  	<ul class="nav nav-pills">
+			    <li class="active"><a href="#tab1" data-toggle="tab">Business</a></li>
+			    <li><a href="#tab2" data-toggle="tab">Marketing</a></li>
+			    <li><a href="#tab3" data-toggle="tab">Technology</a></li>
+			    <li><a href="#tab4" data-toggle="tab">Learning</a></li>
+		  	</ul>
+			</div>
 
-      	<div class="row">
-  				<div class="col-md-8">
-    				<a class="thumbnail">
-      				<img alt="T-Shaped Professional" src="/assets/tshaped.png" />
-    				</a>
-  				</div>
-				</div>
+			<div>
+  			<a class="thumbnail">
+    			<%= render 'pages/knowledge' %>
+  			</a>
+			</div>
 
-				<div class="page-header">
-					<h1 id="knowledge">Knowledge <small>Stack</small></h1>
-				</div>
+			<div class="page-header">
+    		<h1 id="skills">Skills <small>Stack</small></h1>
+    	</div>
 
-				<div class="tabbable tabs-below">
-				  <ul class="nav nav-pills">
-				    <li class="active"><a href="#tab1" data-toggle="tab">Business</a></li>
-				    <li><a href="#tab2" data-toggle="tab">Marketing</a></li>
-				    <li><a href="#tab3" data-toggle="tab">Technology</a></li>
-				    <li><a href="#tab4" data-toggle="tab">Learning</a></li>
-				  </ul>
-				</div>
+    	<div class="tabbable tabs-below">
+			  <ul class="nav nav-pills">
+			    <li class="active"><a href="#tab11" data-toggle="tab">Ideas</a></li>
+			    <li><a href="#tab12" data-toggle="tab">People</a></li>
+			    <li><a href="#tab13" data-toggle="tab">Things</a></li>
+			  </ul>
+			</div>
 
-				<div class="row">
-  				<div class="col-lg-12">
-    				<a class="thumbnail">
-      				<%= render 'pages/knowledge' %>
-    				</a>
-  				</div>
-				</div>
+			<div>
+  			<a class="thumbnail">
+    			<%= render 'pages/knowledge' %>
+  			</a>
+			</div>
 
-				<div class="page-header">
-      		<h1 id="skills">Skills <small>Stack</small></h1>
-      	</div>
+    	<div>
+				<%= render 'pages/skills' %>
+			</div>
 
-      	<div class="tabbable tabs-below">
-				  <ul class="nav nav-pills">
-				    <li class="active"><a href="#tab11" data-toggle="tab">Ideas</a></li>
-				    <li><a href="#tab12" data-toggle="tab">People</a></li>
-				    <li><a href="#tab13" data-toggle="tab">Things</a></li>
-				  </ul>
-				</div>
+			<div class="page-header">
+				<h1 id="employment">Senior Product Manager <small></small></h1>
+				<p class="lead">As a Program Director, I oversee all aspects of the IT Programs of Study including new program development, program life-cycle management, business process innovation, market research, program differentiation and of course, the student experience.</p>
+				<p class="lead">With a focus on the financial and academic outcomes, I have built a profitable, revenue-generating unit consisting of a strong instructional team and cross-functional support staff, that create and deliver superior student experiences, providing long-term value for adult learners and the university community.</p>
+			</div>
 
-				<div class="row">
-  				<div class="col-lg-12">
-    				<a class="thumbnail">
-      				<%= render 'pages/knowledge' %>
-    				</a>
-  				</div>
-				</div>
+			<div>
+				<%= render 'pages/employment' %>
+			</div>
 
-      	<div>
-					<%= render 'pages/skills' %>
-				</div>
+			<div class="page-header">
+				<h1 id="education">Learning Paths <small>in the pursuit of experiecne .</small></h1>
+			</div>
 
-				<div class="page-header">
-					<h1 id="employment">Senior Product Manager <small></h1>
-					<p class="lead">with 24 years experience in the education industry in both public and private enviroments.</p>
-				</div>
-				<div>
-					<%= render 'pages/employment' %>
-				</div>
+			<div>
+  			<a class="thumbnail">
+    			<img alt="Education Mind Map" src="/assets/mindmap.png" />
+  			</a>
+			</div>
+		</div><!-- end col-md-9 -->
 
-				<div class="page-header">
-					<h1 id="education">Learning Paths <small>The Pursuit of Lifelong Learning</small></h1>
-				</div>
+	</div><!-- end second row -->
 
-				<div class="row">
-  				<div class="col-md-12">
-    				<a class="thumbnail">
-      				<img alt="Education Mind Map" src="/assets/mindmap.png" />
-    				</a>
-  				</div>
-				</div>
-
-		</section>
-
-	</div>
 </div>

@@ -7,11 +7,12 @@
 </head>
 
 <body data-spy="scroll" data-target="#sidebar" id="#home">
+
 	<header>
 		<%= render 'layouts/header' %>
 	</header>
 
-	<main class="container" role="main">
+	<main>
     <%= yield %>
   </main>
 
@@ -19,5 +20,7 @@
 		<%= render 'layouts/footer' %>
 		<%= render 'layouts/foot' %>
 	</footer>
+
 </body>
+
 </html>
