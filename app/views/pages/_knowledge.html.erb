@@ -30,37 +30,35 @@
       }
     </script>
 
-    <div id="chart1"></div>
+    <div id="chart1">
+    </div>
+
   </div>
 
   <div class="tab-pane" id="tab2">
+    <style>
+    .chart div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+    }
+    </style>
+    <div class="chart"></div>
     <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Knowledge', ''],
-          ['Market Research', 21],
-          ['Product Differentiation', 18],
-          ['Integrated Marketing Communications', 18],
-          ['Account Management', 9],
-          ['Collaborative-Based Recruitment', 9],
-          ['Enrolment Management', 9]
-        ]);
-
-        var options = {
-          title: 'Product Marketing',
-          hAxis: {title: 'Years of Practice'},
-          height: 600,
-          width: 800
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('chart2'));
-        chart.draw(data, options);
-      }
+    var data = [4, 8, 15, 16, 23, 42];
+    var x = d3.scale.linear()
+        .domain([0, d3.max(data)])
+        .range([0, 420]);
+    d3.select(".chart")
+      .selectAll("div")
+        .data(data)
+      .enter().append("div")
+        .style("width", function(d) { return x(d) + "px"; })
+        .text(function(d) { return d; });
     </script>
-
-    <div id="chart2"></div>
   </div>
 
   <div class="tab-pane" id="tab3">

@@ -2,105 +2,117 @@
   <div class="tab-pane active" id="tab11">
 
     <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['ID', 'X', 'Y', 'Temperature'],
-          ['',   1,  167,      120],
-          ['',   2,  136,      130],
-          ['',   3,  184,      50],
-          ['',   4,  278,      230],
-          ['',   5,  200,      210],
-          ['',   6,  170,      100],
-          ['',   7,  477,      80]
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart () {
+
+    //these arrays hold the label strings
+    var products = new Array();
+    for (var i = 1; i < 7; i ++)
+        products[i]='product'+i;
+
+    var customers = new Array();
+    for (var i = 1; i < 9; i ++)
+        customers[i]='customer'+i;
+
+
+
+
+    var options = {
+    'title':'',
+    // 'vAxis': { textPosition: 'in' },
+    vAxis: {
+    viewWindow: {
+        max: products.length,
+        min: 0,
+        },
+    gridlines: {
+        count: products.length,
+        color : 'white',
+        }
+    },
+    hAxis: {
+    viewWindow: {
+        max: customers.length,
+        min: 0,
+        },
+    gridlines: {
+        count: customers.length,
+        color : 'white',
+        }
+    },
+    'width': 700,
+    'height':500
+    };
+
+    //dtd
+    var customer_product_grid_data_table = new google.visualization.DataTable();
+    customer_product_grid_data_table.addColumn('string', 'Customer and Product');
+    customer_product_grid_data_table.addColumn('number', 'Customer');
+    customer_product_grid_data_table.addColumn('number', 'Product');
+    customer_product_grid_data_table.addColumn('number', 'Profit Margin');
+    customer_product_grid_data_table.addColumn('number', 'Proportion of Sales');
+
+    // add some random numbers to show off
+    for (var i = 1; i < products.length; i ++)
+    for (var j = 1; j < customers.length; j ++)
+        {
+        customer_product_grid_data_table.addRow([
+            '',j,i,50*Math.cos(i+j),20*Math.sin(i)
         ]);
+        }
 
-        var options = {
-          hAxis: {title: 'Functional Skills'},
-          vAxis: {title: 'From Novice to Mastery'},
-          bubble: {textStyle: {fontSize: 11}},
-          colorAxis: {colors: ['yellow', 'red']},
-          height: 500
+    var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
+    chart.draw(customer_product_grid_data_table, options);
 
-        };
+    /*
+    * This can also be
+    * text[text-anchor="start"]
+    * or
+    * text[text-anchor="middle"]
+    * depending on the axis settings. If it doesnt work, try another one, or check the generated SVG source code in your HTML doc.
+    */
+    for ( var i = 0; i < products.length ; i ++ ){
+    $('#chart_div svg text[text-anchor="end"]:contains("'+i+'")').text(function(j,t){
+        if (t == i){
+        if (i >= products.length || i < 1){
+            return " ";
+        }
+        return products[i];
+        }
+    });
+    }
 
-        var chart = new google.visualization.BubbleChart(document.getElementById('ideas-chart'));
-        chart.draw(data, options);
-      }
+    for ( var i = 0; i < customers.length ; i ++ ){
+    $('#chart_div svg text[text-anchor="middle"]:contains("'+i+'")').text(function(j,t){
+        if (t == i){
+        if (i >= customers.length || i < 1){
+            return " ";
+        }
+        return customers[i];
+        }
+    });
+
+
+    } // end function
+
+    }
     </script>
 
-    <div id="ideas-chart"></div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+
+
+    <div id="ideas-chart">
+    </div>
   </div>
 
   <div class="tab-pane" id="tab12">
-
-  <script type="text/javascript">
-  google.load("visualization", "1", {packages:["corechart"]});
-  google.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Skills', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
-      ['Systems Thinker', 1, 4, 'Proficient', 4],
-      ['Problem Solving', 2, 3, 'Competent', 3],
-      ['Planning', 3, 4, 'Proficient', 4],
-      ['Initiative', 4, 6, 'Mastery', 6],
-      ['Organizing', 5, 5,'Expert', 5],
-      ['Creative', 6, 6, 'Mastery', 6],
-      ['Intuitive', 7, 6, 'Mastery', 6],
-      ['Analytical', 8, 5, 'Expert', 5],
-      ['Interrelatedness', 9, 5, 'Expert', 5]
-    ]);
-
-    var options = {
-      title: 'People Skills',
-      hAxis: {title: 'Dreyfus Model of Skill Aquisition'},
-      vAxis: {title: 'From Novice to Mastery'},
-      bubble: {textStyle: {fontSize: 11}}
-    };
-
-    var chart = new google.visualization.BubbleChart(document.getElementById('skillchart2'));
-    chart.draw(data, options);
-  }
-</script>
-
-<div id="skillchart2"></div>
-
+    <div id="skillchart2">
+    </div>
  </div>
 
 <div class="tab-pane" id="tab13">
-
-  <script type="text/javascript">
-  google.load("visualization", "1", {packages:["corechart"]});
-  google.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Skills', 'Life Expectancy', 'Fertility Rate', 'Region', 'Population'],
-      ['Systems Thinker', 1, 4, 'Proficient', 4],
-      ['Problem Solving', 2, 3, 'Competent', 3],
-      ['Planning', 3, 4, 'Proficient', 4],
-      ['Initiative', 4, 6, 'Mastery', 6],
-      ['Organizing', 5, 5,'Expert', 5],
-      ['Creative', 6, 6, 'Mastery', 6],
-      ['Intuitive', 7, 6, 'Mastery', 6],
-      ['Analytical', 8, 5, 'Expert', 5],
-      ['Interrelatedness', 9, 5, 'Expert', 5]
-    ]);
-
-    var options = {
-      title: 'Things',
-      height: 600,
-      width: 500,
-      hAxis: {title: 'Dreyfus Model of Skill Aquisition'},
-      vAxis: {title: 'From Novice to Mastery'},
-      bubble: {textStyle: {fontSize: 12}}
-    };
-
-    var chart = new google.visualization.BubbleChart(document.getElementById('skillchart3'));
-    chart.draw(data, options);
-  }
-  </script>
-
   <div id="skillchart3">
   </div>
 </div>

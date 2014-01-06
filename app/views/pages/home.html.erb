@@ -1,24 +1,27 @@
-<div class="container">
+<div class="container" id="home">
 
 	<div class="row jumbotron"><!-- start first row -->
   	<div class="col-md-12">
+
   		<div class="col-md-3">
-  			<a class="thumbnail">
+  			<div class="thumbnail">
     			<img class="pic" alt="Mark Schipper" src="/assets/mark.jpg" />
-  			</a>
-			</div>
+    		</div>
+			</div><!-- end col-md-3 -->
+
 			<div class="col-md-9">
 				<h1>Mark Schipper</h1>
 		  	<blockquote class="pull-right"><p>Individual expression and selfless collaboration creates design-inspired product marketing and development.</p></blockquote>
-		  </div>
-  	</div>
+		  </div><!-- end col-md-9 -->
+
+		 </div><!-- end col-md-12 -->
   </div><!-- end first row -->
 
 	<div class="row"><!-- start second row -->
 
-	  <div class="col-md-3">
+	  <div class="col-md-3" role="complementary">
       <ul class="nav well">
-        <li><a href="#overview">Forward-Thinking</a></li>
+        <li class="active"><a href="#overview">Hybrid Professional</a></li>
 				<li><a href="#summary">Specializing Generalist</a></li>
 				<li><a href="#knowledge">Knowledge and Skills Stack</a></li>
 				<li><a href="#employment">Senior Product Manager</a></li>
@@ -26,25 +29,29 @@
 			</ul>
 	  </div><!-- end col-md-3 -->
 
-	  <div class="col-md-9">
-  		<div class="page-header">
-  			<h1 id="overview">Forward-Thinking<small> evangelist that get’s things done.</small></h1>
+	  <div class="col-md-9" role="main">
+
+  		<div id="venn">
+				<%= render 'pages/venn' %>
+	   	</div>
+
+	   	<div class="page-header">
+  			<h1 id="overview">Hybrid Professional<small> performs across multiple disciplines. Strategic and tactical. Get's things done.</small></h1>
   		</div>
-  		<div>
-  			<p class="lead">A hybrid professional that performs across multiple disciplines, highly proficient, envisioning on a strategic level, executing on the tactical level, driving business value.</p>
-  		</div>
+  		<div id="epicyclic">
+    		<%= render 'pages/epicyclic' %>
+			</div>
 
  			<div class="page-header">
   			<h1 id="summary">Specializing Generalist<small> with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
   		</div>
-			<div>
-				<a class="thumbnail">
-  				<img alt="T-Shaped Professional" src="/assets/tshaped.png" />
-				</a>
+
+  		<div id="tshaped">
+    		<%= render 'pages/tshaped' %>
 			</div>
 
-			<div class="page-header">
-				<h1 id="knowledge">Knowledge <small>Stack</small></h1>
+			<div id="knowledge" class="page-header">
+				<h1>Knowledge <small>Stack</small></h1>
 			</div>
 			<div class="tabbable tabs-below">
 		  	<ul class="nav nav-pills">
@@ -56,9 +63,7 @@
 			</div>
 
 			<div>
-  			<a class="thumbnail">
-    			<%= render 'pages/knowledge' %>
-  			</a>
+    		<%= render 'pages/knowledge' %>
 			</div>
 
 			<div class="page-header">
@@ -94,14 +99,13 @@
 			</div>
 
 			<div class="page-header">
-				<h1 id="education">Learning Paths <small>in the pursuit of experiecne .</small></h1>
+				<h1 id="education">Learning Paths <small>in the pursuit of knowledge.</small></h1>
 			</div>
 
-			<div>
-  			<a class="thumbnail">
-    			<img alt="Education Mind Map" src="/assets/mindmap.png" />
-  			</a>
+			<div id="edu">
+    		<%= render 'pages/edu' %>
 			</div>
+
 		</div><!-- end col-md-9 -->
 
 	</div><!-- end second row -->
