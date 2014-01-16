@@ -45,10 +45,9 @@ var svg = d3.select("#edu").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
-d3.json("flare.json", function(error, flare) {
-  root = flare;
-  root.x0 = height / 2;
+d3.json("education.json", function(error, education) {
+  root = education;
+  root.x0 = height / 1;
   root.y0 = 0;
 
   function collapse(d) {

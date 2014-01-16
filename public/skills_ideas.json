@@ -1,0 +1,14 @@
+{
+  "name": "",
+  "children": [
+    {"name": "Systems Thinking", "size": 100000},
+    {"name": "Problem Solving", "size": 1000},
+    {"name": "Planning", "size": 10000},
+    {"name": "Initiative", "size": 1000000},
+    {"name": "Organizing", "size": 100000},
+    {"name": "Creative", "size": 1000},
+    {"name": "Intuitive", "size": 1000000},
+    {"name": "Analytical", "size": 100000},
+    {"name": "Interrelatedness", "size": 1000000}
+  ]
+}

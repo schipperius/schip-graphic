@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "children": [
+    {"name": "Leadership", "size": 10},
+    {"name": "Team Building", "size": 100},
+    {"name": "Motivation", "size": 20},
+    {"name": "Communication", "size": 30},
+    {"name": "Influencing", "size": 40},
+    {"name": "Decision Making", "size": 50},
+    {"name": "Cultural Awareness", "size": 60},
+    {"name": "Negotiation", "size": 70},
+    {"name": "Trust Building", "size": 80},
+    {"name": "Conflict Management", "size": 90},
+    {"name": "Coaching", "size": 100}
+  ]
+}

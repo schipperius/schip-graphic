@@ -1,0 +1,39 @@
+{
+ "name": "Learning Paths",
+ "children": [
+  {
+   "name": "Degrees",
+   "children": [
+    {"name": "Bachelor of Science, Zoology"},
+    {"name": "Bachelor of Education, Sciences"}
+    ]
+    },
+  {
+   "name": "Certificates",
+   "children": [
+    {"name": "Certificate in Business Analysis"},
+    {"name": "Certificate in Busienss Intelligence"}
+    ]
+    },
+
+  {
+   "name": "Courses",
+   "children": [
+    {"name": "Photoshop and Illustrator"},
+    {"name": "HTML, CSS and JavaScript"},
+    {"name": "Ruby Programming"},
+    {"name": "Ruby on Rails Development"}
+   ]
+  },
+  {
+   "name": "Industry Certifications",
+   "children": [
+    {"name": "Professional Teaching Certification"},
+    {"name": "Certified Change Management Professional"},
+    {"name": "Microsoft Office Specialist (MOS) Expert"}
+   ]
+  }
+  ]
+}
+
+

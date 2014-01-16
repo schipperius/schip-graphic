@@ -1,31 +1,68 @@
 <script type="text/javascript">
 
-  var w = 960,
-      h = 500;
+// Set dimensions of svg canvas
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    padding = {top: 0, right: 0, bottom: 0, left: 0},
+    width = 400 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
-  var svg = d3.select("#venn").append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
+// Add svg canvas
+var svg = d3.select(".venn").append("svg:svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Draw first circle
+  svg.append("svg:circle")
+    .attr("cx", 100)
+    .attr("cy", 100)
+    .attr("r", 100)
+    .style("fill", "brown")
+    .style("fill-opacity", ".3");
+
+// Add text to circle
+  var text = svg.append("svg:text")
+    .attr("x", 50)
+    .attr("y", 80)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .attr({"xlink:href": "#business", })
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Strategy");
 
   svg.append("svg:circle")
     .attr("cx", 200)
     .attr("cy", 100)
     .attr("r", 100)
-    .style("fill", "brown")
-    .style("fill-opacity", ".5");
-
-  svg.append("svg:circle")
-    .attr("cx", 300)
-    .attr("cy", 100)
-    .attr("r", 100)
     .style("fill", "steelblue")
+    .style("text", "steelblue")
     .style("fill-opacity", ".5");
 
+  var text = svg.append("svg:text")
+    .attr("x", 220)
+    .attr("y", 70)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Development");
+
   svg.append("svg:circle")
-    .attr("cx", 250)
+    .attr("cx", 150)
     .attr("cy", 200)
     .attr("r", 100)
     .style("fill", "green")
-    .style("fill-opacity", ".5");
+    .style("fill-opacity", ".4");
+
+  var text = svg.append("svg:text")
+    .attr("x", 150)
+    .attr("y", 215)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Marketing");
 
 </script>

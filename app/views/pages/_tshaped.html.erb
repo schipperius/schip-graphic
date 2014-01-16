@@ -1,87 +1,92 @@
+
 <script type="text/javascript">
 
-  var w = 960,
-      h = 110;
+  var width = 640,
+      height = 120;
 
-  var svg = d3.select("#tshaped").append("svg:svg")
-    .attr("width", w)
-    .attr("height", h);
+  var svg = d3.select("#tshaped")
+    .append("svg:svg")
+    .attr("width", width)
+    .attr("height", height);
 
-  svg.append("svg:rect")
+  svg.append("svg:a")
+    .attr("xlink:href", "#knowledge")
+    .append("rect")
     .attr("x", 0)
-    .attr("y", 10)
+    .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
-  var text = svg.append("svg:text")
-    .attr("x", 75)
-    .attr("y", 50)
-    .attr("dy", "1em")
-    .attr("text-anchor", "middle")
-    .style("font", "16px Helvetica Neue")
-    .text("Business");
-
+   svg.append("svg:text")
+      .attr("x", 75)
+      .attr("y", 40)
+      .attr("dy", "1em")
+      .attr("text-anchor", "middle")
+      .style("font", "16px Helvetica Neue")
+      .style("fill", "white")
+      .text("Learning");
 
     svg.append("svg:rect")
-    .attr("x", 150)
-    .attr("y", 10)
+    .attr("x", 160)
+    .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 225)
-    .attr("y", 50)
+    .attr("x", 235)
+    .attr("y", 40)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
     .text("Marketing");
 
 
     svg.append("svg:rect")
-    .attr("x", 300)
-    .attr("y", 10)
+    .attr("x", 320)
+    .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 375)
-    .attr("y", 50)
+    .attr("x", 395)
+    .attr("y", 40)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Technology");
-
+    .style("fill", "white")
+    .text("Business");
 
     svg.append("svg:rect")
-    .attr("x", 450)
-    .attr("y", 10)
+    .attr("x", 480)
+    .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 525)
-    .attr("y", 50)
+    .attr("x", 555)
+    .attr("y", 40)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Learning");
-
+    .style("fill", "white")
+    .text("Technology");
 
   var bbox = text.node().getBBox();
 
@@ -89,7 +94,7 @@
 
 <script type="text/javascript">
 
-  var w = 960,
+  var w = 640,
       h = 110;
 
   var svg = d3.select("#tshaped").append("svg:svg")
@@ -97,21 +102,22 @@
     .attr("height", h);
 
   svg.append("svg:rect")
-    .attr("x", 225)
+    .attr("x", 240)
     .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 300)
+    .attr("x", 310)
     .attr("y", 40)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
     .text("Communication");
 
   var bbox = text.node().getBBox();
@@ -120,7 +126,7 @@
 
 <script type="text/javascript">
 
-  var w = 960,
+  var w = 640,
       h = 110;
 
   var svg = d3.select("#tshaped").append("svg:svg")
@@ -128,22 +134,32 @@
     .attr("height", h);
 
   svg.append("svg:rect")
-    .attr("x", 225)
+    .attr("x", 240)
     .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 300)
-    .attr("y", 40)
+    .attr("x", 315)
+    .attr("y", 30)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Information Management");
+    .style("fill", "white")
+    .text("Information");
+
+  var text = svg.append("svg:text")
+    .attr("x", 315)
+    .attr("y", 47)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Management");
 
   var bbox = text.node().getBBox();
 
@@ -151,7 +167,7 @@
 
 <script type="text/javascript">
 
-  var w = 960,
+  var w = 640,
       h = 110;
 
   var svg = d3.select("#tshaped").append("svg:svg")
@@ -159,22 +175,32 @@
     .attr("height", h);
 
   svg.append("svg:rect")
-    .attr("x", 225)
+    .attr("x", 240)
     .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 300)
-    .attr("y", 40)
+    .attr("x", 315)
+    .attr("y", 30)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Organization Management");
+    .style("fill", "white")
+    .text("Organization");
+
+  var text = svg.append("svg:text")
+    .attr("x", 315)
+    .attr("y", 47)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Management");
 
   var bbox = text.node().getBBox();
 
@@ -182,7 +208,7 @@
 
 <script type="text/javascript">
 
-  var w = 960,
+  var w = 640,
       h = 110;
 
   var svg = d3.select("#tshaped").append("svg:svg")
@@ -190,22 +216,32 @@
     .attr("height", h);
 
   svg.append("svg:rect")
-    .attr("x", 225)
+    .attr("x", 240)
     .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 300)
-    .attr("y", 40)
+    .attr("x", 315)
+    .attr("y", 30)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Design and Planning");
+    .style("fill", "white")
+    .text("Design and");
+
+  var text = svg.append("svg:text")
+    .attr("x", 315)
+    .attr("y", 47)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Planning");
 
   var bbox = text.node().getBBox();
 
@@ -213,7 +249,7 @@
 
 <script type="text/javascript">
 
-  var w = 960,
+  var w = 640,
       h = 110;
 
   var svg = d3.select("#tshaped").append("svg:svg")
@@ -221,22 +257,32 @@
     .attr("height", h);
 
   svg.append("svg:rect")
-    .attr("x", 225)
+    .attr("x", 240)
     .attr("y", 0)
     .attr("height", 100)
     .attr("width", 150)
     .attr("rx", 15)
     .attr("ry", 15)
-    .style("fill", "brown")
+    .style("fill", "steelblue")
     .style("fill-opacity", ".5");
 
   var text = svg.append("svg:text")
-    .attr("x", 300)
-    .attr("y", 40)
+    .attr("x", 315)
+    .attr("y", 30)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .text("Research and Investigation");
+    .style("fill", "white")
+    .text("Research and");
+
+  var text = svg.append("svg:text")
+    .attr("x", 315)
+    .attr("y", 47)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "white")
+    .text("Investigation");
 
   var bbox = text.node().getBBox();
 

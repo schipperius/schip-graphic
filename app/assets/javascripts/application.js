@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require d3
+//= require d3.layout
 //= require_tree .
+

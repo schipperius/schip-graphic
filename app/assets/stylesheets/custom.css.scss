@@ -5,44 +5,87 @@ body {
   padding-top: 70px;
 }
 
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-}
-
-#scrollContent{
-	height:186px;
-	overflow:auto;
-	position:relative;
-}
-
-@media (min-width: 979px) {
-  #mynav.affix-top {
-    position: static;
-  	margin-top:0px;
-  	width:228px;
-  }
-
-  #mynav.affix {
-    position: fixed;
-    top:70px;
-    width:228px;
-  }
-}
-
-#mynav li.active a {background-color:#fff;}
-
 .pic {
-	width: 200px;
-	height: 200px;
+	width: 210px;
+	height: 280px;
+  margin-top: 20px;
+}
+
+.venn {
+  margin-top: 50px;
 }
 
 
-.chart div {
+#sidebar {
+  width: 225px;
+}
+
+#sidebar.affix-top {
+  position: static;
+}
+
+#sidebar.affix {
+  position: fixed;
+  top:70px;
+}
+
+/*  Begin Bar Charts */
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
   font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
 }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+/*  End Bar Charts */
+
+/*  Begin Bubble Charts */
+
+text {
+  font-size: 14px;
+  pointer-events: none;
+}
+
+text.parent {
+  fill: #1f77b4;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #999;
+  pointer-events: all;
+}
+
+circle.parent {
+  fill: #1f77b4;
+  fill-opacity: .1;
+  stroke: steelblue;
+}
+
+circle.parent:hover {
+  stroke: #ff7f0e;
+  stroke-width: .5px;
+}
+
+circle.child {
+  pointer-events: none;
+}
+
+/*  End Bubble Charts */

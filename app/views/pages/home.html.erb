@@ -1,92 +1,103 @@
-<div class="container" id="home">
+<div class="container">
 
-	<div class="row jumbotron"><!-- start first row -->
-  	<div class="col-md-12">
+	<div id="overview" class="row jumbotron"><!-- start first row -->
+	  <div class="col-md-7">
 
-  		<div class="col-md-3">
-  			<div class="thumbnail">
-    			<img class="pic" alt="Mark Schipper" src="/assets/mark.jpg" />
-    		</div>
-			</div><!-- end col-md-3 -->
+			<h1>Mark Schipper</h1>
+			<blockquote class="pull-right">Product Manager</blockquote>
 
-			<div class="col-md-9">
-				<h1>Mark Schipper</h1>
-		  	<blockquote class="pull-right"><p>Individual expression and selfless collaboration creates design-inspired product marketing and development.</p></blockquote>
-		  </div><!-- end col-md-9 -->
+	  	<div class="row">
+      	<div id="img" class="col-md-6">
+        	<img class="img-rounded img-responsive pic" alt="Mark Schipper" src="/assets/mark.jpg" />
+      	</div>
 
-		 </div><!-- end col-md-12 -->
+	  	</div>
+	  </div>
+
+		<div id="overview" class="col-md-5 venn">
+  		<%= render 'pages/venn' %>
+  	</div>
   </div><!-- end first row -->
 
 	<div class="row"><!-- start second row -->
-
 	  <div class="col-md-3" role="complementary">
-      <ul class="nav well">
-        <li class="active"><a href="#overview">Hybrid Professional</a></li>
-				<li><a href="#summary">Specializing Generalist</a></li>
-				<li><a href="#knowledge">Knowledge and Skills Stack</a></li>
-				<li><a href="#employment">Senior Product Manager</a></li>
-				<li><a href="#education">Learning Paths</a></li>
-			</ul>
+	  	<nav id="sidebar" class="well nav-scroll" data-spy="affix">
+	      <ul class="nav nav-pills nav-stacked">
+	        <li><a href="#overview">Product Manager</a></li>
+	        <li><a href="#summary">Specializing Generalist</a></li>
+					<li><a href="#knowledge">Knowledge Stack</a></li>
+					<li><a href="#skills">Skills Stockpile</a></li>
+					<li><a href="#employment">Career Progression</a></li>
+					<li><a href="#education">Learning Paths</a></li>
+				</ul>
+			</nav>
 	  </div><!-- end col-md-3 -->
 
 	  <div class="col-md-9" role="main">
+	  	<div id="summary"><!-- summary -->
+				<div class="page-header">
+	  			<h1>Specializing Generalist<small> manages across multiple disciplines with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
+	  		</div>
+	  		<div id="tshaped">
+	    		<%= render 'pages/tshaped' %>
+				</div>
+			</div><!-- end summary -->
 
-  		<div id="venn">
-				<%= render 'pages/venn' %>
-	   	</div>
+			<div id="knowledge" ><!-- knowledge stack-->
+				<div class="page-header">
+					<h1>Knowledge <small>Stack</small></h1>
+				</div>
 
-	   	<div class="page-header">
-  			<h1 id="overview">Hybrid Professional<small> performs across multiple disciplines. Strategic and tactical. Get's things done.</small></h1>
-  		</div>
-  		<div id="epicyclic">
-    		<%= render 'pages/epicyclic' %>
-			</div>
+				<div class="tabbable tabs-below">
+			  	<ul class="nav nav-pills nav-stacked">
+				    <li class="active"><a href="#tab1" data-toggle="tab">Learning and Development</a></li>
+				    <li><a href="#tab2" data-toggle="tab">Marketing Research and Collateral</a></li>
+				    <li><a href="#tab3" data-toggle="tab">Business Strategy and Tactics</a></li>
+				    <li><a href="#tab4" data-toggle="tab">Web Design and Development</a></li>
+			  	</ul><!-- /.nav-stacked -->
 
- 			<div class="page-header">
-  			<h1 id="summary">Specializing Generalist<small> with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
-  		</div>
+					<div class="tab-content">
+		  			<div id="tab1" class="tab-pane active">
+					    <%= render 'pages/chart_learning' %>
+					  </div>
 
-  		<div id="tshaped">
-    		<%= render 'pages/tshaped' %>
-			</div>
+						<div id="tab2" class="tab-pane">
+							<%= render 'pages/chart_marketing' %>
+						</div>
 
-			<div id="knowledge" class="page-header">
-				<h1>Knowledge <small>Stack</small></h1>
-			</div>
-			<div class="tabbable tabs-below">
-		  	<ul class="nav nav-pills">
-			    <li class="active"><a href="#tab1" data-toggle="tab">Business</a></li>
-			    <li><a href="#tab2" data-toggle="tab">Marketing</a></li>
-			    <li><a href="#tab3" data-toggle="tab">Technology</a></li>
-			    <li><a href="#tab4" data-toggle="tab">Learning</a></li>
-		  	</ul>
-			</div>
+		  			<div id="tab3" class="tab-pane">
+							<%= render 'pages/chart_business' %>
+		  			</div>
 
-			<div>
-    		<%= render 'pages/knowledge' %>
-			</div>
+		    		<div id="tab4" class="tab-pane">
+							<%= render 'pages/chart_technology' %>
+		  			</div>
+					</div><!-- /.tab-content -->
+				</div><!-- /.tabbable -->
+			</div><!-- end knowledge stack -->
 
-			<div class="page-header">
-    		<h1 id="skills">Skills <small>Stack</small></h1>
-    	</div>
-
-    	<div class="tabbable tabs-below">
-			  <ul class="nav nav-pills">
-			    <li class="active"><a href="#tab11" data-toggle="tab">Ideas</a></li>
-			    <li><a href="#tab12" data-toggle="tab">People</a></li>
-			    <li><a href="#tab13" data-toggle="tab">Things</a></li>
-			  </ul>
-			</div>
-
-			<div>
-  			<a class="thumbnail">
-    			<%= render 'pages/knowledge' %>
-  			</a>
-			</div>
-
-    	<div>
-				<%= render 'pages/skills' %>
-			</div>
+			<div id="skills"><!-- Skills Stockpile-->
+				<div class="page-header">
+	    		<h1>Skills <small>Stockpile</small></h1>
+	    	</div>
+	    	<div class="tabbable tabs-below">
+				  <ul class="nav nav-pills">
+				    <li class="active"><a href="#tab11" data-toggle="tab">Ideas</a></li>
+				    <li><a href="#tab12" data-toggle="tab">People</a></li>
+				    <li><a href="#tab13" data-toggle="tab">Things</a></li>
+				  </ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab11">
+						  <div id="skills_ideas"></div>
+						</div>
+						<div class="tab-pane" id="tab12">
+						  <div id="skills_people"></div>
+						</div>
+						<div class="tab-pane" id="tab13">
+						  <div id="skills_things"></div>
+						</div>
+					</div>
+				</div><!-- end skills stockpile -->
 
 			<div class="page-header">
 				<h1 id="employment">Senior Product Manager <small></small></h1>
@@ -105,9 +116,8 @@
 			<div id="edu">
     		<%= render 'pages/edu' %>
 			</div>
-
 		</div><!-- end col-md-9 -->
 
 	</div><!-- end second row -->
 
-</div>
+</div><!-- end container -->
