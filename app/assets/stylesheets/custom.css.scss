@@ -100,8 +100,6 @@ body {
 /* End sticky subnav sidebar */
 /*
 *
-*
-*
 */
 
 /* Begin Bar Charts */
@@ -112,10 +110,16 @@ body {
 
 .axis {
   shape-rendering: crispEdges;
+  font: 10px sans-serif;
+}
+
+.axis text {
+  font: 10px sans-serif;
 }
 
 .axis path {
   stroke: none;
+  display: none;
 }
 
 .x.axis line {
@@ -131,10 +135,7 @@ body {
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
 }
-
-
 
 .bar {
   fill: steelblue;
@@ -143,20 +144,6 @@ body {
 .bar:hover {
   fill: brown;
 }
-
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.x.axis path {
-  display: none;
-}
-
-
 
 /*  End Bar Charts */
 
