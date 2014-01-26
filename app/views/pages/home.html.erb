@@ -1,123 +1,129 @@
-<div class="container">
+<section id="overview" class="row jumbotron"><!-- Begin First Row -->
 
-	<div id="overview" class="row jumbotron"><!-- start first row -->
-	  <div class="col-md-7">
-
-			<h1>Mark Schipper</h1>
-			<blockquote class="pull-right">Product Manager</blockquote>
-
-	  	<div class="row">
-      	<div id="img" class="col-md-6">
-        	<img class="img-rounded img-responsive pic" alt="Mark Schipper" src="/assets/mark.jpg" />
-      	</div>
-
-	  	</div>
-	  </div>
-
-		<div id="overview" class="col-md-5 venn">
-  		<%= render 'pages/venn' %>
+	<div class="col-md-6">
+  	<div id="img" >
+    	<img class="img-rounded img-responsive pic" alt="Mark Schipper" src="/assets/mark.jpg" />
   	</div>
-  </div><!-- end first row -->
+  </div>
+  <div class="col-md-6">
+		<h1>Mark Schipper</h1>
+	</div>
 
-	<div class="row"><!-- start second row -->
-	  <div class="col-md-3" role="complementary">
-	  	<nav id="sidebar" class="well nav-scroll" data-spy="affix">
-	      <ul class="nav nav-pills nav-stacked">
-	        <li><a href="#overview">Product Manager</a></li>
-	        <li><a href="#summary">Specializing Generalist</a></li>
-					<li><a href="#knowledge">Knowledge Stack</a></li>
-					<li><a href="#skills">Skills Stockpile</a></li>
-					<li><a href="#employment">Career Progression</a></li>
-					<li><a href="#education">Learning Paths</a></li>
-				</ul>
-			</nav>
-	  </div><!-- end col-md-3 -->
+</section><!-- End First Row -->
 
-	  <div class="col-md-9" role="main">
-	  	<div id="summary"><!-- summary -->
-				<div class="page-header">
-	  			<h1>Specializing Generalist<small> manages across multiple disciplines with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
-	  		</div>
-	  		<div id="tshaped">
-	    		<%= render 'pages/tshaped' %>
-				</div>
-			</div><!-- end summary -->
+<section class="row"><!-- Begin Second Row -->
 
-			<div id="knowledge" ><!-- knowledge stack-->
-				<div class="page-header">
-					<h1>Knowledge <small>Stack</small></h1>
-				</div>
+  <aside class="col-md-3" role="complementary">
+  	<nav class="sidebar well nav-scroll">
+      <ul class="nav sidenav">
+        <li><a href="#overview">Product Manager</a></li>
+        <li><a href="#summary">Specializing Generalist</a></li>
+				<li><a href="#knowledge">Knowledge Stack</a>
+					<ul class="nav">
+						<li><a href="#business" data-toggle="tab">Business Strategy</a></li>
+						<li><a href="#marketing" data-toggle="tab">Marketing and Development</a></li>
+						<li><a href="#technology" data-toggle="tab">Technology</a></li>
+						<li><a href="#learning" data-toggle="tab">Learning and Development</a></li>
+					</ul>
+				</li>
+				<li><a href="#skills">Skills Stockpile</a></li>
+				<li><a href="#employment">Career Progression</a></li>
+				<li><a href="#education">Learning Paths</a></li>
+			</ul>
+		</nav>
+  </aside><!-- end col-md-3 -->
 
-				<div class="tabbable tabs-below">
-			  	<ul class="nav nav-pills nav-stacked">
-				    <li class="active"><a href="#tab1" data-toggle="tab">Learning and Development</a></li>
-				    <li><a href="#tab2" data-toggle="tab">Marketing Research and Collateral</a></li>
-				    <li><a href="#tab3" data-toggle="tab">Business Strategy and Tactics</a></li>
-				    <li><a href="#tab4" data-toggle="tab">Web Design and Development</a></li>
-			  	</ul><!-- /.nav-stacked -->
+  <div class="col-md-9" role="main">
 
-					<div class="tab-content">
-		  			<div id="tab1" class="tab-pane active">
-					    <%= render 'pages/chart_learning' %>
-					  </div>
-
-						<div id="tab2" class="tab-pane">
-							<%= render 'pages/chart_marketing' %>
-						</div>
-
-		  			<div id="tab3" class="tab-pane">
-							<%= render 'pages/chart_business' %>
-		  			</div>
-
-		    		<div id="tab4" class="tab-pane">
-							<%= render 'pages/chart_technology' %>
-		  			</div>
-					</div><!-- /.tab-content -->
-				</div><!-- /.tabbable -->
-			</div><!-- end knowledge stack -->
-
-			<div id="skills"><!-- Skills Stockpile-->
-				<div class="page-header">
-	    		<h1>Skills <small>Stockpile</small></h1>
-	    	</div>
-	    	<div class="tabbable tabs-below">
-				  <ul class="nav nav-pills">
-				    <li class="active"><a href="#tab11" data-toggle="tab">Ideas</a></li>
-				    <li><a href="#tab12" data-toggle="tab">People</a></li>
-				    <li><a href="#tab13" data-toggle="tab">Things</a></li>
-				  </ul>
-					<div class="tab-content">
-						<div class="tab-pane active" id="tab11">
-						  <div id="skills_ideas"></div>
-						</div>
-						<div class="tab-pane" id="tab12">
-						  <div id="skills_people"></div>
-						</div>
-						<div class="tab-pane" id="tab13">
-						  <div id="skills_things"></div>
-						</div>
-					</div>
-				</div><!-- end skills stockpile -->
-
+  	<div id="manager"><!-- Begin Product Manager -->
 			<div class="page-header">
-				<h1 id="employment">Senior Product Manager <small></small></h1>
-				<p class="lead">As a Program Director, I oversee all aspects of the IT Programs of Study including new program development, program life-cycle management, business process innovation, market research, program differentiation and of course, the student experience.</p>
+  			<h1>Product Manager</h1>
+  		</div>
+			<div class="venn">
+				<%= render 'pages/venn' %>
+			</div>
+		</div><!-- End Summary -->
+
+  	<div id="summary"><!-- Begin Summary -->
+			<div class="page-header">
+  			<h1>Specializing Generalist<small> manages across multiple disciplines with a &#39;T-shaped&#39; combination of knowledge and skills.</small></h1>
+  		</div>
+  		<div id="tshaped">
+    		<%= render 'pages/tshaped' %>
+			</div>
+		</div><!-- End Summary -->
+
+		<div id="knowledge" ><!-- Begin Knowledge -->
+			<div class="page-header">
+				<h1>Knowledge <small>Stack</small></h1>
+			</div>
+			<div class="tabbable tabs-below nav-scroll">
+		  	<ul class="nav nav-pills nav-stacked">
+			    <li class="active"><a href="#business" data-toggle="tab">Business Strategy and Tactics</a></li>
+			    <li><a href="#marketing" data-toggle="tab">Product Development and Marketing</a></li>
+			    <li><a href="#technology" data-toggle="tab">Technology</a></li>
+			    <li><a href="#learning" data-toggle="tab">Learning and Development</a></li>
+		  	</ul><!-- /.nav-stacked -->
+				<div class="tab-content">
+	  			<div class="tab-pane active" id="test">
+	  				<div id="knowl_test"></div>
+	  			</div>
+					<div class="tab-pane active" id="business">
+	  				<div id="knowl_bus"></div>
+	  			</div>
+					<div class="tab-pane" id="marketing">
+						<div id="knowl_mar"></div>
+					</div>
+	  			<div class="tab-pane" id="technology">
+	  				<div id="knowl_tech"></div>
+	  			</div>
+	    		<div class="tab-pane" id="learning">
+	    			<div id="knowl_learn"></div>
+	    		</div>
+				</div><!-- /.tab-content -->
+			</div><!-- /.tabbable -->
+		</div><!-- End Knowledge -->
+
+		<div id="skills"><!-- Begin Skills -->
+			<div class="page-header">
+    		<h1>Skills <small>Stockpile</small></h1>
+    	</div>
+    	<div class="tabbable tabs-below">
+			  <ul class="nav nav-pills">
+			    <li class="active"><a href="#ideas" data-toggle="tab">Ideas</a></li>
+			    <li><a href="#people" data-toggle="tab">People</a></li>
+			    <li><a href="#things" data-toggle="tab">Things</a></li>
+			  </ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="ideas">
+					  <div id="skills_ideas"></div>
+					</div>
+					<div class="tab-pane" id="people">
+					  <div id="skills_people"></div>
+					</div>
+					<div class="tab-pane" id="things">
+					  <div id="skills_things"></div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End Skills -->
+
+		<div id="employment"><!-- Employment-->
+			<div class="page-header">
+				<h1>Product Manager</h1>
+				<p class="lead">leading a cross-functional team, optimizing market position and financial returns, consistent with business strategies.</p>
 				<p class="lead">With a focus on the financial and academic outcomes, I have built a profitable, revenue-generating unit consisting of a strong instructional team and cross-functional support staff, that create and deliver superior student experiences, providing long-term value for adult learners and the university community.</p>
 			</div>
+			<div id="swim"></div>
+		</div><!-- End Employment-->
 
-			<div>
-				<%= render 'pages/employment' %>
-			</div>
-
+		<div id="education"><!-- Education-->
 			<div class="page-header">
-				<h1 id="education">Learning Paths <small>in the pursuit of knowledge.</small></h1>
+				<h1>Learning Paths <small>in the pursuit of knowledge.</small></h1>
 			</div>
+			<div id="flare"></div>
+		</div><!-- End Education-->
 
-			<div id="edu">
-    		<%= render 'pages/edu' %>
-			</div>
-		</div><!-- end col-md-9 -->
+	</div><!-- End col-md-9 -->
 
-	</div><!-- end second row -->
-
-</div><!-- end container -->
+</section><!-- End Second Row -->

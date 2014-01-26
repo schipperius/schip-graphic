@@ -1,10 +1,10 @@
 <script type="text/javascript">
 
 // Set dimensions of svg canvas
-var margin = {top: 0, right: 0, bottom: 0, left: 0},
-    padding = {top: 0, right: 0, bottom: 0, left: 0},
-    width = 400 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 20, left: 20},
+    padding = {top: 20, right: 20, bottom: 20, left: 20},
+    width = 500 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 // Add svg canvas
 var svg = d3.select(".venn").append("svg:svg")
@@ -24,13 +24,31 @@ var svg = d3.select(".venn").append("svg:svg")
 // Add text to circle
   var text = svg.append("svg:text")
     .attr("x", 50)
-    .attr("y", 80)
+    .attr("y", 55)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .attr({"xlink:href": "#business", })
     .style("font", "16px Helvetica Neue")
-    .style("fill", "white")
+    .style("fill", "Grey")
     .text("Strategy");
+  var text = svg.append("svg:text")
+    .attr("x", 50)
+    .attr("y", 70)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .attr({"xlink:href": "#business", })
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "Grey")
+    .text("and");
+  var text = svg.append("svg:text")
+    .attr("x", 50)
+    .attr("y", 85)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .attr({"xlink:href": "#business", })
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "Grey")
+    .text("Tactics");
 
   svg.append("svg:circle")
     .attr("cx", 200)
@@ -42,11 +60,19 @@ var svg = d3.select(".venn").append("svg:svg")
 
   var text = svg.append("svg:text")
     .attr("x", 220)
-    .attr("y", 70)
+    .attr("y", 60)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .style("fill", "white")
+    .style("fill", "Grey")
+    .text("Product");
+  var text = svg.append("svg:text")
+    .attr("x", 220)
+    .attr("y", 75)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "Grey")
     .text("Development");
 
   svg.append("svg:circle")
@@ -62,7 +88,15 @@ var svg = d3.select(".venn").append("svg:svg")
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
     .style("font", "16px Helvetica Neue")
-    .style("fill", "white")
+    .style("fill", "Grey")
+    .text("Product");
+  var text = svg.append("svg:text")
+    .attr("x", 150)
+    .attr("y", 230)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .style("font", "16px Helvetica Neue")
+    .style("fill", "Grey")
     .text("Marketing");
 
 </script>

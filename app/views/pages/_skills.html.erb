@@ -1,120 +1,219 @@
-<div class="tab-content">
-  <div class="tab-pane active" id="tab11">
+<!-- d3.js add on bubble chart skills stack -->
 
-    <script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(drawChart);
-    function drawChart () {
+<script type="text/javascript">
+(function() {
 
-    //these arrays hold the label strings
-    var products = new Array();
-    for (var i = 1; i < 7; i ++)
-        products[i]='product'+i;
+var w = 500,
+  h = 500,
+  r = 400,
+  x = d3.scale.linear().range([0, r]),
+  y = d3.scale.linear().range([0, r]),
+  node,
+  root;
 
-    var customers = new Array();
-    for (var i = 1; i < 9; i ++)
-        customers[i]='customer'+i;
+var pack = d3.layout.pack()
+    .size([r, r])
+    .value(function(d) { return d.size; })
 
+var bubble1 = d3.select("#skills_ideas").insert("svg:svg", "h2")
+    .attr("width", w)
+    .attr("height", h)
+  .append("svg:g")
+    .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
 
+d3.json("skills_ideas.json", function(data) {
+  node = root = data;
 
+  var nodes = pack.nodes(root);
 
-    var options = {
-    'title':'',
-    // 'vAxis': { textPosition: 'in' },
-    vAxis: {
-    viewWindow: {
-        max: products.length,
-        min: 0,
-        },
-    gridlines: {
-        count: products.length,
-        color : 'white',
-        }
-    },
-    hAxis: {
-    viewWindow: {
-        max: customers.length,
-        min: 0,
-        },
-    gridlines: {
-        count: customers.length,
-        color : 'white',
-        }
-    },
-    'width': 700,
-    'height':500
-    };
+  bubble1.selectAll("circle")
+      .data(nodes)
+    .enter().append("svg:circle")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .attr("r", function(d) { return d.r; })
+      .on("click", function(d) { return zoom(node == d ? root : d); });
 
-    //dtd
-    var customer_product_grid_data_table = new google.visualization.DataTable();
-    customer_product_grid_data_table.addColumn('string', 'Customer and Product');
-    customer_product_grid_data_table.addColumn('number', 'Customer');
-    customer_product_grid_data_table.addColumn('number', 'Product');
-    customer_product_grid_data_table.addColumn('number', 'Profit Margin');
-    customer_product_grid_data_table.addColumn('number', 'Proportion of Sales');
+  bubble1.selectAll("text")
+      .data(nodes)
+    .enter().append("svg:text")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("x", function(d) { return d.x; })
+      .attr("y", function(d) { return d.y; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
+      .text(function(d) { return d.name; });
 
-    // add some random numbers to show off
-    for (var i = 1; i < products.length; i ++)
-    for (var j = 1; j < customers.length; j ++)
-        {
-        customer_product_grid_data_table.addRow([
-            '',j,i,50*Math.cos(i+j),20*Math.sin(i)
-        ]);
-        }
+  d3.select(window).on("click", function() { zoom(root); });
+});
 
-    var chart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
-    chart.draw(customer_product_grid_data_table, options);
+function zoom(d, i) {
+  var k = r / d.r / 2;
+  x.domain([d.x - d.r, d.x + d.r]);
+  y.domain([d.y - d.r, d.y + d.r]);
 
-    /*
-    * This can also be
-    * text[text-anchor="start"]
-    * or
-    * text[text-anchor="middle"]
-    * depending on the axis settings. If it doesnt work, try another one, or check the generated SVG source code in your HTML doc.
-    */
-    for ( var i = 0; i < products.length ; i ++ ){
-    $('#chart_div svg text[text-anchor="end"]:contains("'+i+'")').text(function(j,t){
-        if (t == i){
-        if (i >= products.length || i < 1){
-            return " ";
-        }
-        return products[i];
-        }
-    });
-    }
+  var t = bubble1.transition()
+      .duration(d3.event.altKey ? 7500 : 750);
 
-    for ( var i = 0; i < customers.length ; i ++ ){
-    $('#chart_div svg text[text-anchor="middle"]:contains("'+i+'")').text(function(j,t){
-        if (t == i){
-        if (i >= customers.length || i < 1){
-            return " ";
-        }
-        return customers[i];
-        }
-    });
+  t.selectAll("circle")
+      .attr("cx", function(d) { return x(d.x); })
+      .attr("cy", function(d) { return y(d.y); })
+      .attr("r", function(d) { return k * d.r; });
+
+  t.selectAll("text")
+      .attr("x", function(d) { return x(d.x); })
+      .attr("y", function(d) { return y(d.y); })
+      .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; });
+
+  node = d;
+  d3.event.stopPropagation();
+}
+})();
 
 
-    } // end function
+(function() {
+var w = 500,
+    h = 500,
+    r = 400,
+    x = d3.scale.linear().range([0, r]),
+    y = d3.scale.linear().range([0, r]),
+    node,
+    root;
 
-    }
-    </script>
+var pack = d3.layout.pack()
+    .size([r, r])
+    .value(function(d) { return d.size; })
 
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+var bubble2 = d3.select("#skills_people").insert("svg:svg", "h2")
+    .attr("width", w)
+    .attr("height", h)
+  .append("svg:g")
+    .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
+
+d3.json("skills_people.json", function(data) {
+  node = root = data;
+
+  var nodes = pack.nodes(root);
+
+  bubble2.selectAll("circle")
+      .data(nodes)
+    .enter().append("svg:circle")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .attr("r", function(d) { return d.r; })
+      .on("click", function(d) { return zoom(node == d ? root : d); });
+
+  bubble2.selectAll("text")
+      .data(nodes)
+    .enter().append("svg:text")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("x", function(d) { return d.x; })
+      .attr("y", function(d) { return d.y; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
+      .text(function(d) { return d.name; });
+
+  d3.select(window).on("click", function() { zoom(root); });
+});
+
+function zoom(d, i) {
+  var k = r / d.r / 2;
+  x.domain([d.x - d.r, d.x + d.r]);
+  y.domain([d.y - d.r, d.y + d.r]);
+
+  var t = bubble2.transition()
+      .duration(d3.event.altKey ? 7500 : 750);
+
+  t.selectAll("circle")
+      .attr("cx", function(d) { return x(d.x); })
+      .attr("cy", function(d) { return y(d.y); })
+      .attr("r", function(d) { return k * d.r; });
+
+  t.selectAll("text")
+      .attr("x", function(d) { return x(d.x); })
+      .attr("y", function(d) { return y(d.y); })
+      .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; });
+
+  node = d;
+  d3.event.stopPropagation();
+}
+})();
 
 
+(function() {
+var w = 500,
+    h = 500,
+    r = 400,
+    x = d3.scale.linear().range([0, r]),
+    y = d3.scale.linear().range([0, r]),
+    node,
+    root;
 
-    <div id="ideas-chart">
-    </div>
-  </div>
+var pack = d3.layout.pack()
+    .size([r, r])
+    .value(function(d) { return d.size; })
 
-  <div class="tab-pane" id="tab12">
-    <div id="skillchart2">
-    </div>
- </div>
+var bubble3 = d3.select("#skills_things").insert("svg:svg", "h2")
+    .attr("width", w)
+    .attr("height", h)
+  .append("svg:g")
+    .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
 
-<div class="tab-pane" id="tab13">
-  <div id="skillchart3">
-  </div>
-</div>
+d3.json("skills_things.json", function(data) {
+  node = root = data;
 
+  var nodes = pack.nodes(root);
+
+  bubble3.selectAll("circle")
+      .data(nodes)
+    .enter().append("svg:circle")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .attr("r", function(d) { return d.r; })
+      .on("click", function(d) { return zoom(node == d ? root : d); });
+
+  bubble3.selectAll("text")
+      .data(nodes)
+    .enter().append("svg:text")
+      .attr("class", function(d) { return d.children ? "parent" : "child"; })
+      .attr("x", function(d) { return d.x; })
+      .attr("y", function(d) { return d.y; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", "middle")
+      .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
+      .text(function(d) { return d.name; });
+
+  d3.select(window).on("click", function() { zoom(root); });
+});
+
+function zoom(d, i) {
+  var k = r / d.r / 2;
+  x.domain([d.x - d.r, d.x + d.r]);
+  y.domain([d.y - d.r, d.y + d.r]);
+
+  var t = bubble3.transition()
+      .duration(d3.event.altKey ? 7500 : 750);
+
+  t.selectAll("circle")
+      .attr("cx", function(d) { return x(d.x); })
+      .attr("cy", function(d) { return y(d.y); })
+      .attr("r", function(d) { return k * d.r; });
+
+  t.selectAll("text")
+      .attr("x", function(d) { return x(d.x); })
+      .attr("y", function(d) { return y(d.y); })
+      .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; });
+
+  node = d;
+  d3.event.stopPropagation();
+}
+})();
+</script>
+
+<!-- End Skills Stack -->
 
